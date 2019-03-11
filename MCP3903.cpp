@@ -77,7 +77,7 @@ void MCP3903::writeRegister(byte reg, unsigned long data)
 //read from ADC channel (0-5)
 double MCP3903::readADC(byte channel)
 {
-	unsigned long r = readRegister(channel);
+	long r = (long) readRegister(channel);
 
 	if (r > 8388607l) r -= 16777216l;
 	
